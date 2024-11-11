@@ -1,0 +1,24 @@
+﻿@page
+@model LAB6DB.Pages.IndexModel
+@{
+    ViewData["Title"] = "Task List";
+}
+
+<div class="container">
+    <h1 class="my-4">Task List</h1>
+    <a class="btn btn-outline-primary mb-3" href="/Create">Add Task</a>
+
+    @if (IndexModel.Tasks.Count == 0)
+    {
+        <p>No task added.</p>
+    }
+    else
+    {
+        <ul class="list-group">
+            @foreach (var task in IndexModel.Tasks)
+            {
+                <li class="list-group-item">@task</li>
+            }
+        </ul>
+    }
+</div>
